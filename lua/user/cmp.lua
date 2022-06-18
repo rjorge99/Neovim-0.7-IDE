@@ -18,7 +18,7 @@ if not snip_status_ok then
     return
 end
 
-require("luasnip/loaders/from_vscode").lazy_load()
+-- require("luasnip/loaders/from_vscode").lazy_load()
 
 -- Loading custom snippets
 require("luasnip/loaders/from_vscode").lazy_load({ paths = { "./snippets" } })
@@ -143,7 +143,7 @@ cmp.setup({
                     if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
                         menu = entry.completion_item.data.detail .. " " .. menu
                     end
-                    vim_item.kind = '⚡'
+                    vim_item.kind = "⚡"
                 end
 
                 vim_item.menu = menu
