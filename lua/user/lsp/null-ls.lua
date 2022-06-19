@@ -50,7 +50,7 @@ null_ls.setup({
                 "--trailing-comma",
                 "none",
                 "--print-width",
-                "100",
+                "95",
                 "--tab-width",
                 "4",
                 "--bracket-same-line",
