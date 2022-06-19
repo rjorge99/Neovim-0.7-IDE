@@ -1,5 +1,5 @@
 {
-    "name": "react-snippets",
+    "name": "snippets",
     "engines": {
         "vscode": "^1.11.0"
     },
@@ -13,6 +13,15 @@
                     "javascriptreact"
                 ],
                 "path": "./snippets/react.json"
+            },
+            {
+                "language": [
+                    "typescript",
+                    "typescriptreact",
+                    "javascript",
+                    "javascriptreact"
+                ],
+                "path": "./snippets/customSnippets.json"
             }
         ]
     }

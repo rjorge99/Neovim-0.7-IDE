@@ -1,0 +1,24 @@
+{
+    "Create an export arrow function": {
+        "scope": "javascript,typescript,typescriptreact,javascriptreact",
+        "prefix": "eaf",
+        "body": ["export const ${1:name} = ($2) => {", "    $0", "};"],
+        "description": "Creates an export arrow function"
+    },
+    "Create arrow function": {
+        "scope": "javascript,typescript,typescriptreact,javascriptreact",
+        "prefix": "af",
+        "body": ["const ${1:name} = ($2) => {", "    $0", "};"],
+        "description": "Creates an arrow function"
+    },
+    "React-Redux useDispatch": {
+        "prefix": "useDispatch",
+        "body": ["const dispatch = useDispatch();"],
+        "description": "Crea el useDispatch de React Redux"
+    },
+    "React-Redux useSelector": {
+        "prefix": "useSelector",
+        "body": ["const state = useSelector( state => state );"],
+        "description": "Crea el useSelector de React Redux"
+    }
+}
