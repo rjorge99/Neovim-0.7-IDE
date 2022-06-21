@@ -8,17 +8,10 @@ if not lspind_status_ok then
     return
 end
 
--- local cpm_tabnine_status_ok, tabnine = pcall(require, "cmp_tabnine.config")
--- if not cpm_tabnine_status_ok then
---     return
--- end
-
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
     return
 end
-
--- require("luasnip/loaders/from_vscode").lazy_load()
 
 -- Loading custom snippets
 require("luasnip/loaders/from_vscode").lazy_load({ paths = { "./snippets" } })
@@ -27,19 +20,6 @@ local check_backspace = function()
     local col = vim.fn.col(".") - 1
     return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
-
--- tabnine:setup({
---     max_lines = 1000,
---     max_num_results = 20,
---     sort = true,
---     run_on_every_keystroke = true,
---     -- snippet_placeholder = "..",
---     -- ignored_file_types = { -- default is not to ignore
---     -- 	-- uncomment to ignore in lua:
---     -- 	-- lua = true
---     -- },
---     -- show_prediction_strength = false,
--- })
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
@@ -74,7 +54,7 @@ local kind_icons = {
 local source_mapping = {
     nvim_lsp = "[LSP]",
     luasnip = "[Snippet]",
-    cmp_tabnine = "[Tabnine]",
+    -- cmp_tabnine = "[Tabnine]",
     buffer = "[Buffer]",
     path = "[Path]",
 }
@@ -82,7 +62,7 @@ local source_mapping = {
 cmp.setup({
     snippet = {
         expand = function(args)
-            luasnip.lsp_expand(args.body) -- For `luasnip` users.
+            luasnip.lsp_expand(args.body)
         end,
     },
     mapping = {
@@ -91,30 +71,28 @@ cmp.setup({
         ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
         ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
         ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-        ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+        ["<C-y>"] = cmp.config.disable,
         ["<C-e>"] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
         }),
-        -- Accept currently selected item. If none selected, `select` first item.
-        -- Set `select` to `false` to only confirm explicitly selected items.
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expandable() then
-                luasnip.expand()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-            elseif check_backspace() then
-                fallback()
-            else
-                fallback()
-            end
-        end, {
-            "i",
-            "s",
-        }),
+        -- ["<Tab>"] = cmp.mapping(function(fallback)
+        --     if cmp.visible() then
+        --         cmp.select_next_item()
+        --     elseif luasnip.expandable() then
+        --         luasnip.expand()
+        --     elseif luasnip.expand_or_jumpable() then
+        --         luasnip.expand_or_jump()
+        --     elseif check_backspace() then
+        --         fallback()
+        --     else
+        --         fallback()
+        --     end
+        -- end, {
+        --     "i",
+        --     "s",
+        -- }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -151,6 +129,7 @@ cmp.setup({
                 return vim_item
             end,
         }),
+
         -- Uso de lspkind
         -- format = lspkind.cmp_format({
         --     mode = "symbol", -- show only symbol annotations
@@ -184,7 +163,7 @@ cmp.setup({
     sources = {
         { name = "nvim_lsp" },
         { name = "luasnip" },
-        { name = "cmp_tabnine" },
+        -- { name = "cmp_tabnine" },
         {
             name = "buffer",
             option = {
