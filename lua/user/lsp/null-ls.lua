@@ -58,7 +58,7 @@ null_ls.setup({
             },
         }),
         -- formatting.black.with({ extra_args = { "--fast" } }), USADO PARA FORMATEAR PYTHON
-        formatting.stylua,
+        -- formatting.stylua,
         -- diagnostics.flake8
     },
     on_attach = function(client, bufnr)

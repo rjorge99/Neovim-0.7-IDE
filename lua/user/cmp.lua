@@ -166,14 +166,7 @@ cmp.setup({
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "cmp_tabnine" },
-        {
-            name = "buffer",
-            option = {
-                get_bufnrs = function()
-                    return vim.api.nvim_list_bufs()
-                end,
-            },
-        },
+        { name = "buffer" },
         { name = "path" },
     },
     confirm_opts = {
