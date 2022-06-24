@@ -82,11 +82,11 @@ return packer.startup(function(use)
 
     -- Tabnine
     -- Windows
-    -- use({ "tzachar/cmp-tabnine", after = "nvim-cmp", run = "powershell ./install.ps1", requires = "hrsh7th/nvim-cmp" })
+    use({ "tzachar/cmp-tabnine", after = "nvim-cmp", run = "powershell ./install.ps1", requires = "hrsh7th/nvim-cmp" })
     -- Linux
     -- use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 
-    use("github/copilot.vim")
+    -- use("github/copilot.vim")
 
     -- snippets
     use({ "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" }) --snippet engine

@@ -56,7 +56,7 @@ local kind_icons = {
 local source_mapping = {
     nvim_lsp = "[LSP]",
     luasnip = "[Snippet]",
-    -- cmp_tabnine = "[Tabnine]",
+    cmp_tabnine = "[Tabnine]",
     buffer = "[Buffer]",
     path = "[Path]",
 }
@@ -165,7 +165,7 @@ cmp.setup({
     sources = {
         { name = "nvim_lsp" },
         { name = "luasnip" },
-        -- { name = "cmp_tabnine" },
+        { name = "cmp_tabnine" },
         {
             name = "buffer",
             option = {
