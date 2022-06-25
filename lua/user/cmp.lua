@@ -10,7 +10,6 @@ end
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
-
     return
 end
 
@@ -175,11 +174,15 @@ cmp.setup({
     },
     window = {
         documentation = {
-            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+            border = "rounded",
+            winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+        },
+        completion = {
+            border = "rounded",
+            winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
         },
     },
     experimental = {
-        ghost_text = false,
-        native_menu = false,
+        ghost_text = true,
     },
 })
