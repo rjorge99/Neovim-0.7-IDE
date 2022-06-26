@@ -53,12 +53,15 @@ local kind_icons = {
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
 local source_mapping = {
+    copilot = "[Copilot]",
     nvim_lsp = "[LSP]",
     luasnip = "[Snippet]",
     cmp_tabnine = "[Tabnine]",
     buffer = "[Buffer]",
     path = "[Path]",
 }
+
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 
 cmp.setup({
     snippet = {
@@ -125,6 +128,11 @@ cmp.setup({
                     vim_item.kind = "⚡"
                 end
 
+                if entry.source.name == "copilot" then
+                    vim_item.kind = "[] Copilot"
+                    vim_item.kind_hl_group = "CmpItemKindCopilot"
+                end
+
                 vim_item.menu = menu
 
                 return vim_item
@@ -162,6 +170,7 @@ cmp.setup({
         -- end,
     },
     sources = {
+        { name = "copilot" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "cmp_tabnine" },
