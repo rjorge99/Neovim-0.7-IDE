@@ -76,6 +76,7 @@ return packer.startup(function(use)
         end,
     }) --  Easymotion like plugin
     use({ "norcalli/nvim-colorizer.lua", commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6" })
+    use({ "mg979/vim-visual-multi" }) -- multicursor
 
     -- Colorschemes
     use("rjorge99/darkplus.nvim")
@@ -108,7 +109,7 @@ return packer.startup(function(use)
 
     -- Copilot
     -- use("github/copilot.vim")
-    use {
+    use({
         "zbirenbaum/copilot.lua",
         event = { "VimEnter" },
         config = function()
@@ -116,12 +117,12 @@ return packer.startup(function(use)
                 require("copilot").setup()
             end, 100)
         end,
-    }
+    })
 
-    use {
+    use({
         "zbirenbaum/copilot-cmp",
         module = "copilot_cmp",
-    }
+    })
 
     -- snippets
     use({ "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" }) --snippet engine
