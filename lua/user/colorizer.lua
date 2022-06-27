@@ -3,7 +3,6 @@ if not status_ok then
     return
 end
 
-print("colorizer loaded")
 colorizer.setup({ "*" }, {
     RGB = true, -- #RGB hex codes
     RRGGBB = true, -- #RRGGBB hex codes
