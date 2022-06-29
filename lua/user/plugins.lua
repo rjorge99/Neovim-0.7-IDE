@@ -76,7 +76,7 @@ return packer.startup(function(use)
         end,
     }) --  Easymotion like plugin
     use({ "norcalli/nvim-colorizer.lua", commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6" })
-    use({ "mg979/vim-visual-multi" }) -- multicursor
+    -- use({ "mg979/vim-visual-multi" }) -- multicursor
 
     -- Colorschemes
     use("rjorge99/darkplus.nvim")
@@ -92,20 +92,20 @@ return packer.startup(function(use)
 
     -- Tabnine
     -- Windows
-    -- use({
-    --     "tzachar/cmp-tabnine",
-    --     commit = "e23d32a76304496aade4e4b285751a6a8b505491",
-    --     after = "nvim-cmp",
-    --     run = "powershell ./install.ps1",
-    --     requires = "hrsh7th/nvim-cmp",
-    -- })
-    -- Linux
     use({
         "tzachar/cmp-tabnine",
         commit = "e23d32a76304496aade4e4b285751a6a8b505491",
-        run = "./install.sh",
+        after = "nvim-cmp",
+        run = "powershell ./install.ps1",
         requires = "hrsh7th/nvim-cmp",
     })
+    -- Linux
+    -- use({
+    --     "tzachar/cmp-tabnine",
+    --     commit = "e23d32a76304496aade4e4b285751a6a8b505491",
+    --     run = "./install.sh",
+    --     requires = "hrsh7th/nvim-cmp",
+    -- })
 
     -- Copilot
     -- use("github/copilot.vim")
