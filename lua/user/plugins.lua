@@ -76,7 +76,7 @@ return packer.startup(function(use)
         end,
     }) --  Easymotion like plugin
     use({ "norcalli/nvim-colorizer.lua", commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6" })
-    -- use({ "mg979/vim-visual-multi" }) -- multicursor
+    use({ "mg979/vim-visual-multi" }) -- multicursor
 
     -- Colorschemes
     use("rjorge99/darkplus.nvim")
