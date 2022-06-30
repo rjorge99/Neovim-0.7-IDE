@@ -77,7 +77,15 @@ return packer.startup(function(use)
     }) --  Easymotion like plugin
     use({ "norcalli/nvim-colorizer.lua", commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6" })
     use({ "mg979/vim-visual-multi" }) -- multicursor
-
+    use({ "anuvyklack/keymap-amend.nvim" })
+    use({
+        "anuvyklack/pretty-fold.nvim",
+        requires = "anuvyklack/nvim-keymap-amend", -- only for preview
+        config = function()
+            require("pretty-fold").setup()
+            require("pretty-fold.preview").setup()
+        end,
+    })
     -- Colorschemes
     use("rjorge99/darkplus.nvim")
 
