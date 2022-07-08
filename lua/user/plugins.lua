@@ -116,21 +116,21 @@ return packer.startup(function(use)
     -- })
 
     -- Copilot
-    -- use("github/copilot.vim")
-    use({
-        "zbirenbaum/copilot.lua",
-        event = { "VimEnter" },
-        config = function()
-            vim.defer_fn(function()
-                require("copilot").setup()
-            end, 100)
-        end,
-    })
-
-    use({
-        "zbirenbaum/copilot-cmp",
-        module = "copilot_cmp",
-    })
+    use("github/copilot.vim")
+    -- use({
+    --     "zbirenbaum/copilot.lua",
+    --     event = { "VimEnter" },
+    --     config = function()
+    --         vim.defer_fn(function()
+    --             require("copilot").setup()
+    --         end, 100)
+    --     end,
+    -- })
+    --
+    -- use({
+    --     "zbirenbaum/copilot-cmp",
+    --     module = "copilot_cmp",
+    -- })
 
     -- snippets
     use({ "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" }) --snippet engine
