@@ -84,7 +84,7 @@ M.on_attach = function(client, bufnr)
     if client.name == "tsserver" then
         client.server_capabilities.document_formatting = false
 
-        require("nvim-lsp-ts-utils").setup({ filter_out_diagnostics_by_code = { 80001 } })
+        require("nvim-lsp-ts-utils").setup({ filter_out_diagnostics_by_code = { 80001, 80002 } })
         require("nvim-lsp-ts-utils").setup_client(client)
     end
     lsp_keymaps(bufnr)
