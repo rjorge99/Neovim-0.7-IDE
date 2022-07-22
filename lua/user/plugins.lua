@@ -86,7 +86,7 @@ return packer.startup(function(use)
     --         require("pretty-fold.preview").setup()
     --     end,
     -- })
-    use({ "metakirby5/codi.vim" }) -- Quokka similar
+    -- use({ "metakirby5/codi.vim" }) -- Quokka similar
     -- Colorschemes
     use("rjorge99/darkplus.nvim")
 
