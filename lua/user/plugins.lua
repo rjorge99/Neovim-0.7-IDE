@@ -89,7 +89,6 @@ return packer.startup(function(use)
     -- use({ "metakirby5/codi.vim" }) -- Quokka similar
     -- Colorschemes
     use("rjorge99/darkplus.nvim")
-    use("kwsp/halcyon-neovim")
 
     -- cmp plugins
     use({ "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" }) -- The completion plugin
