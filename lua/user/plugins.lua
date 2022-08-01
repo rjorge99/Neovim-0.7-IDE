@@ -55,7 +55,7 @@ return packer.startup(function(use)
     use({ "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" })
     use({ "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" })
     use({ "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" }) -- Lines to indentetion
-    use({ "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" })
+    use({ "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" }) --Main menu when executing neovim
     use({ "onsails/lspkind.nvim", commit = "57e5b5dfbe991151b07d272a06e365a77cc3d0e7" }) -- Vs Code like pictograms
     use({
         "iamcco/markdown-preview.nvim",
@@ -65,28 +65,19 @@ return packer.startup(function(use)
             vim.g.mkdp_filetypes = { "markdown" }
         end,
         ft = { "markdown" },
-    })
+    }) -- Markdown previewer
     use({
         "phaazon/hop.nvim",
         commit = " a3cf6684bcb9fc974609ae81424f285f05280d90",
-        branch = "v1", -- optional but strongly recommended
+        branch = "v1",
         config = function()
-            -- you can configure Hop the way you like here; see :h hop-config
             require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
         end,
     }) --  Easymotion like plugin
     use({ "norcalli/nvim-colorizer.lua", commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6" })
     use({ "mg979/vim-visual-multi" }) -- multicursor
-    -- use({ "anuvyklack/keymap-amend.nvim" })
-    -- use({
-    --     "anuvyklack/pretty-fold.nvim",
-    --     requires = "anuvyklack/nvim-keymap-amend", -- only for preview
-    --     config = function()
-    --         require("pretty-fold").setup()
-    --         require("pretty-fold.preview").setup()
-    --     end,
-    -- })
-    -- use({ "metakirby5/codi.vim" }) -- Quokka similar
+
+
     -- Colorschemes
     use("rjorge99/darkplus.nvim")
     use("folke/tokyonight.nvim")
@@ -117,22 +108,7 @@ return packer.startup(function(use)
         requires = "hrsh7th/nvim-cmp",
     })
 
-    -- Copilot
-    use("github/copilot.vim")
-    -- use({
-    --     "zbirenbaum/copilot.lua",
-    --     event = { "VimEnter" },
-    --     config = function()
-    --         vim.defer_fn(function()
-    --             require("copilot").setup()
-    --         end, 100)
-    --     end,
-    -- })
-    --
-    -- use({
-    --     "zbirenbaum/copilot-cmp",
-    --     module = "copilot_cmp",
-    -- })
+    use("github/copilot.vim") -- Github copilot
 
     -- snippets
     use({ "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" }) --snippet engine
