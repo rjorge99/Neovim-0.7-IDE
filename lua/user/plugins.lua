@@ -77,10 +77,11 @@ return packer.startup(function(use)
     use({ "norcalli/nvim-colorizer.lua", commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6" })
     use({ "mg979/vim-visual-multi" }) -- multicursor
 
-
     -- Colorschemes
     use("rjorge99/darkplus.nvim")
     use("folke/tokyonight.nvim")
+    use("Mofiqul/dracula.nvim")
+    use("olimorris/onedarkpro.nvim")
 
     -- cmp plugins
     use({ "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" }) -- The completion plugin
